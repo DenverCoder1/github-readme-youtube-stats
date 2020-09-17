@@ -33,9 +33,9 @@ function validateParam($name, $pattern, $defaults)
     }
 }
 
-$color = validateParam("color", "/^(#[0-9a-fA-F]{6}|[A-Za-z]+)$/", $defaults);
+$color = validateParam("color", "/^([0-9a-fA-F]{3}|[0-9a-fA-F]{6}|[A-Za-z]+)$/", $defaults);
 $logo = validateParam("logo", "/^[A-Za-z0-9]+$/", $defaults);
-$logoColor = validateParam("logoColor", "/^(#[0-9a-fA-F]{6}|[A-Za-z]+)$/", $defaults);
+$logoColor = validateParam("logoColor", "/^([0-9a-fA-F]{3}|[0-9a-fA-F]{6}|[A-Za-z]+)$/", $defaults);
 $style = validateParam("style", "/^[A-Za-z\-]+$/", $defaults);
 $label = validateParam("label", "/^[A-Za-z0-9!~ %._,\-\/:'\"|=+&()*^$#@`{}?<>\[\]]+$/", $defaults);
 $id = validateParam("id", "/^[A-Za-z0-9]+$/", $defaults);
