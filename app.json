@@ -1,6 +1,6 @@
 {
-  "name": "Start on Heroku: PHP",
-  "description": "A barebones PHP app that makes use of the Silex web framework",
-  "repository": "https://github.com/heroku/php-getting-started",
+  "name": "GitHub Readme Youtube Stats",
+  "description": "Youtube stats badges for your Github profile README",
+  "repository": "https://github.com/DenverCoder1/github-readme-youtube-stats/",
   "addons": []
 }
