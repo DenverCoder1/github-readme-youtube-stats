@@ -46,28 +46,88 @@ Markup for creating the badge as a link to your YouTube channel
 
 ### color
 
-Color of the right side of the badge (Default: `blue` for subscribers, `brightgreen` for views)
+Color of the right side of the badge (css named color or hex digits)
 
-`https://github-readme-youtube-stats.herokuapp.com/subscribers/index.php?color=red&id=[YOUR CHANNEL ID]&key=[YOUR API KEY]`
+> Default: `blue` for subscribers, `brightgreen` for views
 
 <a href="https://www.youtube.com/channel/UCipSxT7a3rn81vGLw9lqRkg?sub_confirmation=1"><img alt="youtube subscribers" title="Subscribe to my YouTube channel" src="https://freshidea.com/jonah/youtube-api/subscribers-badge.php?color=red"/></a>
 
-`https://github-readme-youtube-stats.herokuapp.com/views/index.php?color=0a8b9d&id=[YOUR CHANNEL ID]&key=[YOUR API KEY]`
+`https://github-readme-youtube-stats.herokuapp.com/subscribers/index.php?color=red&id=[YOUR CHANNEL ID]&key=[YOUR API KEY]`
 
 <a href="https://www.youtube.com/channel/UCipSxT7a3rn81vGLw9lqRkg?sub_confirmation=1"><img alt="youtube subscribers" title="Subscribe to my YouTube channel" src="https://freshidea.com/jonah/youtube-api/view-count-badge.php?color=0a8b9d"/></a>
 
+`https://github-readme-youtube-stats.herokuapp.com/views/index.php?color=0a8b9d&id=[YOUR CHANNEL ID]&key=[YOUR API KEY]`
+
 ### logo
 
-Company logo supported by shields.io (Default: `youtube`)
+Company logo supported by [shields.io](https://shields.io/#styles)
+
+> Default: `youtube`
+
+<a href="https://www.youtube.com/channel/UCipSxT7a3rn81vGLw9lqRkg?sub_confirmation=1"><img alt="youtube subscribers" title="Subscribe to my YouTube channel" src="https://freshidea.com/jonah/youtube-api/subscribers-badge.php?logo=none"/></a>
+
+`https://github-readme-youtube-stats.herokuapp.com/subscribers/index.php?logo=none&id=[YOUR CHANNEL ID]&key=[YOUR API KEY]`
+
+<a href="https://www.youtube.com/channel/UCipSxT7a3rn81vGLw9lqRkg?sub_confirmation=1"><img alt="youtube subscribers" title="Subscribe to my YouTube channel" src="https://freshidea.com/jonah/youtube-api/view-count-badge.php?logo=plex"/></a>
+
+`https://github-readme-youtube-stats.herokuapp.com/views/index.php?logo=plex&id=[YOUR CHANNEL ID]&key=[YOUR API KEY]`
 
 ### logoColor
 
-Color of the logo (Default: `white`)
+Color of the logo
+
+> Default: `white`
+
+<a href="https://www.youtube.com/channel/UCipSxT7a3rn81vGLw9lqRkg?sub_confirmation=1"><img alt="youtube subscribers" title="Subscribe to my YouTube channel" src="https://freshidea.com/jonah/youtube-api/subscribers-badge.php?logoColor=gold"/></a>
+
+`https://github-readme-youtube-stats.herokuapp.com/subscribers/index.php?logoColor=gold&id=[YOUR CHANNEL ID]&key=[YOUR API KEY]`
+
+<a href="https://www.youtube.com/channel/UCipSxT7a3rn81vGLw9lqRkg?sub_confirmation=1"><img alt="youtube subscribers" title="Subscribe to my YouTube channel" src="https://freshidea.com/jonah/youtube-api/view-count-badge.php?logoColor=gold"/></a>
+
+`https://github-readme-youtube-stats.herokuapp.com/views/index.php?logoColor=brightgreen&id=[YOUR CHANNEL ID]&key=[YOUR API KEY]`
 
 ### style
 
-Style of the badge (Default: `flat-square`)
+Style of the badge
+
+> Default: `flat-square`
+
+<a href="https://www.youtube.com/channel/UCipSxT7a3rn81vGLw9lqRkg?sub_confirmation=1"><img alt="youtube subscribers" title="Subscribe to my YouTube channel" src="https://freshidea.com/jonah/youtube-api/subscribers-badge.php?style=plastic"/></a>
+
+`https://github-readme-youtube-stats.herokuapp.com/subscribers/index.php?style=plastic&id=[YOUR CHANNEL ID]&key=[YOUR API KEY]`
+
+<a href="https://www.youtube.com/channel/UCipSxT7a3rn81vGLw9lqRkg?sub_confirmation=1"><img alt="youtube subscribers" title="Subscribe to my YouTube channel" src="https://freshidea.com/jonah/youtube-api/view-count-badge.php?style=flat"/></a>
+
+`https://github-readme-youtube-stats.herokuapp.com/views/index.php?style=flat&id=[YOUR CHANNEL ID]&key=[YOUR API KEY]`
+
+<a href="https://www.youtube.com/channel/UCipSxT7a3rn81vGLw9lqRkg?sub_confirmation=1"><img alt="youtube subscribers" title="Subscribe to my YouTube channel" src="https://freshidea.com/jonah/youtube-api/view-count-badge.php?style=flat-square"/></a>
+
+`https://github-readme-youtube-stats.herokuapp.com/views/index.php?style=flat-square&id=[YOUR CHANNEL ID]&key=[YOUR API KEY]`
+
+<a href="https://www.youtube.com/channel/UCipSxT7a3rn81vGLw9lqRkg?sub_confirmation=1"><img alt="youtube subscribers" title="Subscribe to my YouTube channel" src="https://freshidea.com/jonah/youtube-api/view-count-badge.php?style=for-the-badge"/></a>
+
+`https://github-readme-youtube-stats.herokuapp.com/views/index.php?style=for-the-badge&id=[YOUR CHANNEL ID]&key=[YOUR API KEY]`
+
+<a href="https://www.youtube.com/channel/UCipSxT7a3rn81vGLw9lqRkg?sub_confirmation=1"><img alt="youtube subscribers" title="Subscribe to my YouTube channel" src="https://freshidea.com/jonah/youtube-api/view-count-badge.php?style=social"/></a>
+
+`https://github-readme-youtube-stats.herokuapp.com/views/index.php?style=social&id=[YOUR CHANNEL ID]&key=[YOUR API KEY]`
 
 ### label
 
-Label for the badge (Default: `Youtube subscribers` for subscribers, `YouTube view count` for views)
+Label for the badge
+
+> Default: `Youtube subscribers` for subscribers, `YouTube view count` for views
+
+<a href="https://www.youtube.com/channel/UCipSxT7a3rn81vGLw9lqRkg?sub_confirmation=1"><img alt="youtube subscribers" title="Subscribe to my YouTube channel" src="https://freshidea.com/jonah/youtube-api/subscribers-badge.php?style=social&logoColor=black&label=Subscribe"/></a>
+
+`?style=social&logoColor=black&label=Subscribe`
+
+<a href="https://www.youtube.com/channel/UCipSxT7a3rn81vGLw9lqRkg?sub_confirmation=1"><img alt="youtube subscribers" title="Subscribe to my YouTube channel" src="https://freshidea.com/jonah/youtube-api/view-count-badge.php?label=Views"/></a>
+
+`https://github-readme-youtube-stats.herokuapp.com/views/index.php?label=Views&id=[YOUR CHANNEL ID]&key=[YOUR API KEY]`
+
+See [shields.io](https://shields.io/#styles) for more info on parameters
+
+### Support
+
+♥ If you like this project, give it a ⭐ and share it with friends!
