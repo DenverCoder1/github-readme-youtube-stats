@@ -1,4 +1,5 @@
 <p align="center">
+  <img src="https://i.imgur.com/0QRyKo9.png" width="100px"/>
   <h3 align="center">Github README YouTube Stats</h3>
 
   <p align="center">
