@@ -1,5 +1,3 @@
-<!-- PROJECT LOGO -->
-<br />
 <p align="center">
   <h3 align="center">Github README YouTube Stats</h3>
 
@@ -27,6 +25,8 @@ Markup for creating the badge as a link to your YouTube channel
     <a href="https://www.youtube.com/channel/[YOUR CHANNEL ID]">
      <img alt="youtube subscribers" src="https://github-readme-youtube-stats.herokuapp.com/subscribers/index.php?id=[YOUR CHANNEL ID]&key=[YOUR API KEY]"/>
     </a>
+    
+See below for info on how to get a YouTube API key and your channel's ID.
 
 ## View Count Badge
 
@@ -41,6 +41,8 @@ Markup for creating the badge as a link to your YouTube channel
     <a href="https://www.youtube.com/channel/[YOUR CHANNEL ID]">
      <img alt="youtube subscribers" src="https://github-readme-youtube-stats.herokuapp.com/views/index.php?id=[YOUR CHANNEL ID]&key=[YOUR API KEY]"/>
     </a>
+    
+See below for info on how to get a YouTube API key and your channel's ID.
     
 ## Additional parameters
 
@@ -111,6 +113,41 @@ Label for the badge
 
 See [shields.io](https://shields.io/#styles) for more info on parameters
 
+## How to get a Youtube API key
+
+1. Go to https://console.developers.google.com/project and sign in
+2. Click "Create Project"
+3. Name your project and click "Create"
+4. Click the "Google APIs" link in the top left corner and select your project
+5. Click "Enable APIs and Services"
+6. Search for "YouTube Data API"
+7. Enable "YouTube Data API v3"
+8. In the left panel select "Credentials"
+9. Click "Create Credentials", then "API key"
+10. Copy your API key
+
+## How to find your YouTube channel ID
+
+1. Go to your Youtube channel's page
+2. The string of characters after `channel/` and before any `?` is your YouTube Channel ID
+
+If you have a custom channel name:
+
+1. Open the developer console with F12 or Right-click + Inspect Element
+2. Go to the console tab
+3. In the console, enter `window.ytInitialData.responseContext.serviceTrackingParams[0].params[0].value`
+4. This will return your YouTube channel ID as a string
+
+## Deploying it on your own
+
+If you can, it is preferable to host the files on your own server.
+
+Doing this can lead to better uptime and more control over customization (you can modify the code for your usage).
+
+Also, deploying it on your own means you can place your API key directly into the PHP code so it will not be visible in the URL. This makes it so that your API key cannot get used by other people without your knowledge.
+
+You can deploy the PHP files on any website server with PHP installed or as a Heroku app.
+
 ### Support
 
-♥ If you like this project, give it a ⭐ and share it with friends!
+💙 If you like this project, give it a ⭐ and share it with friends!
