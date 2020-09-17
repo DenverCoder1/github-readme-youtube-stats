@@ -163,3 +163,5 @@ You can deploy the PHP files on any website server with PHP installed or as a He
   <a href="https://www.youtube.com/channel/UCipSxT7a3rn81vGLw9lqRkg?sub_confirmation=1"><img alt="Youtube" title="Youtube" src="https://img.shields.io/badge/-Subscribe-red?style=for-the-badge&logo=youtube&logoColor=white"/></a>
   <a href="https://www.patreon.com/jonahlawrence"><img alt="Patreon" title="Patreon" src="https://img.shields.io/badge/-Patreon-F96854?style=for-the-badge&logo=patreon&logoColor=white"/></a>
 </p>
+
+<a href="https://ko-fi.com/jlawrence">☕ Buy me a coffee</a>
