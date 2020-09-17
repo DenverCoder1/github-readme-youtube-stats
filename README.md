@@ -148,6 +148,18 @@ Also, deploying it on your own means you can place your API key directly into th
 
 You can deploy the PHP files on any website server with PHP installed or as a Heroku app.
 
-### Support
+## Contact me
+
+<p align="left">
+  <a href="https://twitter.com/DenverCoder1"><img alt="Twitter" title="Twitter" src="https://img.shields.io/badge/-Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white"/></a>
+  <a href="https://www.reddit.com/user/denvercoder1/"><img alt="Reddit" title="Reddit" src="https://img.shields.io/badge/-Reddit-FF5700?style=for-the-badge&logo=reddit&logoColor=white"/></a>
+</p>
+
+## Support
 
 💙 If you like this project, give it a ⭐ and share it with friends!
+
+<p align="left">
+  <a href="https://www.youtube.com/channel/UCipSxT7a3rn81vGLw9lqRkg?sub_confirmation=1"><img alt="Youtube" title="Youtube" src="https://img.shields.io/badge/-Subscribe-red?style=for-the-badge&logo=youtube&logoColor=white"/></a>
+  <a href="https://www.patreon.com/jonahlawrence"><img alt="Patreon" title="Patreon" src="https://img.shields.io/badge/-Patreon-F96854?style=for-the-badge&logo=patreon&logoColor=white"/></a>
+</p>
