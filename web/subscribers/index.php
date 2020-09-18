@@ -57,7 +57,7 @@ header('Content-type: image/svg+xml');
 $apiUrl = "https://www.googleapis.com/youtube/v3/channels?part=statistics";
 $apiUrl .= "&id=" . $id . "&alt=json&key=" . $key;
 
-// Query for finding view count in JSON
+// Query for finding subscriber count in JSON
 $query = "$.items[0].statistics.subscriberCount";
 
 // URL parameters
