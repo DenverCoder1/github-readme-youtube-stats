@@ -9,6 +9,7 @@ $defaults = [
     "logoColor" => "white",
     "style" => "flat-square",
     "label" => "YouTube view count",
+    "labelColor" => "gray",
     "id" => "UCipSxT7a3rn81vGLw9lqRkg",
     "key" => "[YOUR API KEY HERE]" // you can put your API key here if you deploy it yourself
 ];

@@ -34,6 +34,7 @@ function getShieldURL($query, $defaults)
     $logoColor = validateParam("logoColor", "/^([0-9a-fA-F]{3}|[0-9a-fA-F]{6}|[A-Za-z]+)$/", $defaults);
     $style = validateParam("style", "/^[A-Za-z\-]+$/", $defaults);
     $label = validateParam("label", "/^[^#&?<>]+$/", $defaults);
+    $labelColor = validateParam("labelColor", "/^([0-9a-fA-F]{3}|[0-9a-fA-F]{6}|[A-Za-z]+)$/", $defaults);
     $id = validateParam("id", "/^[A-Za-z0-9]+$/", $defaults);
     $key = validateParam("key", "/^[A-Za-z0-9_]+$/", $defaults);
 
@@ -59,6 +60,7 @@ function getShieldURL($query, $defaults)
         "logoColor" => $logoColor,
         "style" => $style,
         "label" => $label,
+        "labelColor" => $labelColor,
         "query" => $query,
         "url" => $apiUrl
     );
