@@ -76,7 +76,9 @@ $url = "https://img.shields.io/badge/dynamic/json?" . http_build_query($params);
 
 // output shields.io URL in a comment (for debugging)
 if (isset($_GET["showUrl"])) {
-    echo "<!-- " . $url . " -->";
+    // API key will be hidden by default in the echo'd URL
+    // to show the full URL, replace this with echo "<!-- $url -->";
+    echo "<!-- " . strstr($url, '%26key%3D', true) . " -->";
 }
 
 // get response from the URL and output its contents
