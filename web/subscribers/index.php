@@ -74,8 +74,10 @@ $params = array(
 // build the shields.io url using the above parameters and JSON query
 $url = "https://img.shields.io/badge/dynamic/json?" . http_build_query($params);
 
-// output URL in a comment
-echo "<!-- " . $url . " -->";
+// output shields.io URL in a comment (for debugging)
+if (isset($_GET["showUrl"])) {
+    echo "<!-- " . $url . " -->";
+}
 
 // get response from the URL and output its contents
 echo curl_get_contents($url);
