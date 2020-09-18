@@ -148,7 +148,7 @@ If you have a custom channel name:
 
 1. Open the developer console with F12 or Right-click + Inspect Element
 2. Go to the console tab
-3. In the console, enter `window.ytInitialData.responseContext.serviceTrackingParams[0].params[0].value`
+3. In the console, enter `document.querySelector('meta[itemprop="channelId"]').content`
 4. This will return your YouTube channel ID as a string
 
 ## Deploying it on your own
