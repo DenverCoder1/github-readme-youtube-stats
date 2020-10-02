@@ -153,15 +153,11 @@ See [shields.io](https://shields.io/#styles) for more info on parameters
 
 ## How to find your YouTube channel ID
 
-1. Go to your Youtube channel's page
-2. The string of characters after `channel/` and before any `?` is your YouTube Channel ID
+1. Go to your https://www.youtube.com/account_advanced
+2. You will find your channel ID below your user ID
+3. Click "Copy" to copy your channel ID
 
-If you have a custom channel name:
-
-1. Open the developer console with F12 or Right-click + Inspect Element
-2. Go to the console tab
-3. In the console, enter `document.querySelector('meta[itemprop="channelId"]').content`
-4. This will return your YouTube channel ID as a string
+![channel_id](https://i.imgur.com/dqGiHQP.png)
 
 ## Deploying it on your own
 
