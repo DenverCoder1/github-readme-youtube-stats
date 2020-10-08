@@ -10,7 +10,7 @@ $defaults = [
     "style" => "flat-square",
     "label" => "YouTube view count",
     "labelColor" => "gray",
-    "id" => "UCipSxT7a3rn81vGLw9lqRkg",
+    "id" => "UC-lHJZR3Gqxm24_Vd_AJ5Yw",
     "key" => "[YOUR API KEY HERE]" // you can put your API key here if you deploy it yourself
 ];
 
@@ -24,4 +24,10 @@ $url = getShieldURL($query, $defaults);
 header('Content-type: image/svg+xml');
 
 // Get response from the URL and output its contents
-echo curl_get_contents($url);
+$response = (curl_get_contents($url));
+
+//Adding Commas 
+preg_match_all('!\d+!',strip_tags($response),$matches);
+$response =  str_replace($matches[0][0],number_format($matches[0][0]),$response);
+
+echo $response;
