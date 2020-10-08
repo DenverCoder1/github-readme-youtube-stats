@@ -10,7 +10,7 @@ $defaults = [
     "style" => "flat-square",
     "label" => "YouTube view count",
     "labelColor" => "gray",
-    "id" => "UC-lHJZR3Gqxm24_Vd_AJ5Yw",
+    "id" => "UCipSxT7a3rn81vGLw9lqRkg",
     "key" => "[YOUR API KEY HERE]" // you can put your API key here if you deploy it yourself
 ];
 
@@ -27,7 +27,7 @@ header('Content-type: image/svg+xml');
 $response = (curl_get_contents($url));
 
 //Adding Commas 
-preg_match_all('!\d+!',strip_tags($response),$matches);
-$response =  str_replace($matches[0][0],number_format($matches[0][0]),$response);
+preg_match_all('!\d+!', strip_tags($response), $matches);
+$response =  str_replace($matches[0][0], number_format($matches[0][0]), $response);
 
 echo $response;
