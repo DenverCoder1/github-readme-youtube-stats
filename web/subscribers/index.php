@@ -8,6 +8,7 @@ $defaults = [
     "logo" => "youtube",
     "logoColor" => "white",
     "style" => "flat-square",
+    "format" => "short",
     "label" => "YouTube subscribers",
     "labelColor" => "gray",
     "id" => "UCipSxT7a3rn81vGLw9lqRkg",
@@ -26,8 +27,8 @@ header('Content-type: image/svg+xml');
 // Get response from the URL and output its contents
 $response = curl_get_contents($url);
 
-//Adding Commas 
-preg_match_all('!\d+!', strip_tags($response), $matches);
-$response =  str_replace($matches[0][0], number_format($matches[0][0]), $response);
+// get format param and format the subscribers accordingly
+$format = validateParam("format", "/^(commas|short|none)$/", $defaults);
+$response = formatSubscribers($response, $format);
 
 echo $response;

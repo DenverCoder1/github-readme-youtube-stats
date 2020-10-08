@@ -68,3 +68,30 @@ function getShieldURL($query, $defaults)
     // Build the Shields.io url using the above parameters and JSON query
     return "https://img.shields.io/badge/dynamic/json?" . http_build_query($params);
 }
+
+// formats response subscriber count according to chosen format
+function formatSubscribers($response, $format) {
+    switch ($format) {
+        case "commas":
+            // Adding Commas
+            preg_match_all('!\d+!', strip_tags($response), $matches);
+            return str_replace($matches[0][0], number_format($matches[0][0]), $response);
+        case "short":
+            // shortening number
+            preg_match_all('!\d+!', strip_tags($response), $matches);
+            return str_replace($matches[0][0], shortNumber($matches[0][0]), $response);
+        case "none"; // fallthrough
+        default:
+            return $response;
+    }
+}
+
+// rounds a number to first decimal point and adds appropriate label for amount
+function shortNumber($num)
+{
+    $units = ['', 'k', 'm', 'b', 't'];
+    for ($i = 0; $num >= 1000; $i++) {
+        $num /= 1000;
+    }
+    return round($num, 1) . $units[$i];
+}
