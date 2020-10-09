@@ -70,7 +70,7 @@ function getShieldURL($query, $defaults)
 }
 
 // formats response number according to chosen format
-function formatResponseNumber($response, $format) {
+function formatResponseNumber($response, $format, $style) {
     switch ($format) {
         case "commas":
             // Adding Commas
@@ -79,7 +79,11 @@ function formatResponseNumber($response, $format) {
         case "short":
             // shortening number
             preg_match_all('!\d+!', strip_tags($response), $matches);
-            return str_replace($matches[0][0], shortNumber($matches[0][0]), $response);
+            $number = shortNumber($matches[0][0]);
+            if ('for-the-badge' === $style) {
+                $number = strtoupper($number);
+            }
+            return str_replace($matches[0][0], $number, $response);
         case "none"; // fallthrough
         default:
             return $response;

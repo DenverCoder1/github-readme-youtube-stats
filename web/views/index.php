@@ -29,6 +29,6 @@ $response = (curl_get_contents($url));
 
 // get format param and format the view count accordingly
 $format = validateParam("format", "/^(commas|short|none)$/", $defaults);
-$response = formatResponseNumber($response, $format);
-
+$style = validateParam("style", "/^[A-Za-z\-]+$/", $defaults);
+$response = formatResponseNumber($response, $format, $style);
 echo $response;
