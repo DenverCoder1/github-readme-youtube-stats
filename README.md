@@ -128,12 +128,24 @@ Color for the left part of the badge
 | `?labelColor=magenta` | <a href="https://www.youtube.com/channel/UCipSxT7a3rn81vGLw9lqRkg?sub_confirmation=1"><img alt="youtube subscribers" title="Subscribe to my YouTube channel" src="https://freshidea.com/jonah/youtube-api/subscribers-badge.php?labelColor=magenta#"/></a> |
 | `?labelColor=33ab06` | <a href="https://www.youtube.com/channel/UCipSxT7a3rn81vGLw9lqRkg?sub_confirmation=1"><img alt="youtube views" title="Subscribe to my YouTube channel" src="https://freshidea.com/jonah/youtube-api/view-count-badge.php?labelColor=33ab06#"/></a> |
 
+### format
+
+Display format of the number in the badge
+
+> Default: `short`
+
+| Parameter | Appearance |
+| --- | --- |
+| `?format=none` | <a href="https://www.youtube.com/channel/UCipSxT7a3rn81vGLw9lqRkg"><img alt="youtube views" title="YouTube views" src="https://freshidea.com/jonah/youtube-api/view-count-badge.php?format=none#"/></a> |
+| `?format=commas` | <a href="https://www.youtube.com/channel/UCipSxT7a3rn81vGLw9lqRkg"><img alt="youtube views" title="YouTube views" src="https://freshidea.com/jonah/youtube-api/view-count-badge.php?format=commas#"/></a> |
+| `?format=short` | <a href="https://www.youtube.com/channel/UCipSxT7a3rn81vGLw9lqRkg"><img alt="youtube views" title="YouTube views" src="https://freshidea.com/jonah/youtube-api/view-count-badge.php?format=short#"/></a> |
+
 ## Mixing styles
 
 | Parameter | Appearance |
 | --- | --- |
 | `?style=social&logoColor=black&label=Subscribe` | <a href="https://www.youtube.com/channel/UCipSxT7a3rn81vGLw9lqRkg?sub_confirmation=1"><img alt="youtube subscribers" title="Subscribe to my YouTube channel" src="https://freshidea.com/jonah/youtube-api/subscribers-badge.php?style=social&logoColor=black&label=Subscribe#"/></a> |
-| `?label=View+count&style=for-the-badge&color=3d3d3d` | <a href="https://www.youtube.com/channel/UCipSxT7a3rn81vGLw9lqRkg?sub_confirmation=1"><img alt="youtube views" title="Subscribe to my YouTube channel" src="https://freshidea.com/jonah/youtube-api/view-count-badge.php?label=View+count&style=for-the-badge&color=3d3d3d#"/></a> |
+| `?label=View+count&style=for-the-badge&color=3d3d3d&format=commas` | <a href="https://www.youtube.com/channel/UCipSxT7a3rn81vGLw9lqRkg?sub_confirmation=1"><img alt="youtube views" title="Subscribe to my YouTube channel" src="https://freshidea.com/jonah/youtube-api/view-count-badge.php?label=View+count&style=for-the-badge&color=3d3d3d&format=commas#"/></a> |
 | `?label=Views&style=for-the-badge&color=red&labelColor=ce4630` | <a href="https://www.youtube.com/channel/UCipSxT7a3rn81vGLw9lqRkg?sub_confirmation=1"><img alt="youtube views" title="Subscribe to my YouTube channel" src="https://freshidea.com/jonah/youtube-api/view-count-badge.php?label=Views&style=for-the-badge&color=red&labelColor=ce4630#"/></a> |
 
 See [shields.io](https://shields.io/#styles) for more info on parameters
