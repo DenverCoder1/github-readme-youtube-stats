@@ -35,7 +35,7 @@ function getShieldURL($query, $defaults)
     $style = validateParam("style", "/^[A-Za-z\-]+$/", $defaults);
     $label = validateParam("label", "/^[^#&?<>]+$/", $defaults);
     $labelColor = validateParam("labelColor", "/^([0-9a-fA-F]{3}|[0-9a-fA-F]{6}|[A-Za-z]+)$/", $defaults);
-    $id = validateParam("id", "/^[A-Z-a-z_0-9]+$/", $defaults);
+    $id = validateParam("id", "/^[A-Za-z0-9\-\_]+$/", $defaults);
     $key = validateParam("key", "/^[A-Za-z0-9_]+$/", $defaults);
 
     // API key was not specified in URL or defaults
