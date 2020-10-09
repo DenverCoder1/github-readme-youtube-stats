@@ -69,8 +69,8 @@ function getShieldURL($query, $defaults)
     return "https://img.shields.io/badge/dynamic/json?" . http_build_query($params);
 }
 
-// formats response subscriber count according to chosen format
-function formatSubscribers($response, $format) {
+// formats response number according to chosen format
+function formatResponseNumber($response, $format) {
     switch ($format) {
         case "commas":
             // Adding Commas

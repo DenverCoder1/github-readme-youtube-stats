@@ -27,8 +27,8 @@ header('Content-type: image/svg+xml');
 // Get response from the URL and output its contents
 $response = curl_get_contents($url);
 
-// get format param and format the subscribers accordingly
+// get format param and format the subscriber count accordingly
 $format = validateParam("format", "/^(commas|short|none)$/", $defaults);
-$response = formatSubscribers($response, $format);
+$response = formatResponseNumber($response, $format);
 
 echo $response;
