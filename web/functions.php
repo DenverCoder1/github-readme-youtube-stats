@@ -1,7 +1,7 @@
 <?php
 
 // Get the contents of a URL
-function curl_get_contents($url)
+function curl_get_contents($url): string
 {
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_HEADER, 0);
@@ -16,7 +16,7 @@ function curl_get_contents($url)
 }
 
 // Validate parameters and return param if valid and default otherwise
-function validateParam($name, $pattern, $defaults)
+function validateParam($name, $pattern, $defaults): string
 {
     if (isset($_GET[$name]) && preg_match($pattern, $_GET[$name])) {
         return $_GET[$name];
@@ -26,7 +26,7 @@ function validateParam($name, $pattern, $defaults)
 }
 
 // Use YouTube Data API and Shields.io to get an image URL
-function getShieldURL($query, $defaults)
+function getShieldURL($query, $defaults): string 
 {
     // Check for and validate parameters
     $color = validateParam("color", "/^([0-9a-fA-F]{3}|[0-9a-fA-F]{6}|[A-Za-z]+)$/", $defaults);
@@ -70,7 +70,7 @@ function getShieldURL($query, $defaults)
 }
 
 // formats response number according to chosen format
-function formatResponseNumber($response, $format, $style) {
+function formatResponseNumber($response, $format, $style): string {
     switch ($format) {
         case "commas":
             // Adding Commas
@@ -91,7 +91,7 @@ function formatResponseNumber($response, $format, $style) {
 }
 
 // rounds a number to first decimal point and adds appropriate label for amount
-function shortNumber($num)
+function shortNumber($num): string
 {
     $units = ['', 'k', 'm', 'b', 't'];
     for ($i = 0; $num >= 1000; $i++) {
