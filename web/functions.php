@@ -26,7 +26,7 @@ function validateParam($name, $pattern, $defaults): string
 }
 
 // Use YouTube Data API and Shields.io to get an image URL
-function getShieldURL($query, $defaults): array
+function getShieldURL($query, $defaults): string 
 {
     // Check for and validate parameters
     $color = validateParam("color", "/^([0-9a-fA-F]{3}|[0-9a-fA-F]{6}|[A-Za-z]+)$/", $defaults);
