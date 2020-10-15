@@ -1,0 +1,15 @@
+import speech_recognition as sr
+import os
+import pyaudio
+import bindtools
+
+r=sr.Recognizer()
+with sr.Microphone() as source:
+   print("say something")
+   audio=r.listen(source)
+   print('done')
+   try:
+    text=r.recognize_google(audio)
+    print(text)
+   except:
+     print(e)
