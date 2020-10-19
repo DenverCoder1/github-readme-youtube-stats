@@ -12,7 +12,7 @@ $defaults = [
     "label" => "YouTube View Count",
     "labelColor" => "gray",
     "id" => "UCipSxT7a3rn81vGLw9lqRkg",
-    "key" => "AIzaSyB66QFKg2skV3gGHDnNHJotxmMgKfy5k9E"//"[YOUR API KEY HERE]" // you can put your API key here if you deploy it yourself
+    "key" => "[YOUR API KEY HERE]" // you can put your API key here if you deploy it yourself
 ];
 
 // Query for finding view count in JSON
