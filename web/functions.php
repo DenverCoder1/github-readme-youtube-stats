@@ -63,8 +63,8 @@ function getShieldURL($query, $defaults): string
     // getting the subscribers count by querying throught the decoded json
     $number = $decoded->items[0]->statistics->$query;
 
-    // getting the subscribers count to a rounded value and right format
-    $message = shortNumber($number);
+    // get format param and format the view count accordingly
+    $message = formatResponseNumber($number, $format, $style);
 
     // Shields.io URL parameters
     $params = array(
@@ -80,31 +80,27 @@ function getShieldURL($query, $defaults): string
     // Build the Shields.io url using the above parameters and JSON query
     $final =  "https://img.shields.io/static/v1?" . http_build_query($params);
 
-    // get format param and format the view count accordingly
-    $final = formatResponseNumber($final, $format, $style);
-
     // returning the final url with all the respective parameters
     return $final;
 }
 
 // formats response number according to chosen format
-function formatResponseNumber($response, $format, $style): string {
+function formatResponseNumber($number, $format, $style): string {
     switch ($format) {
         case "commas":
             // Adding Commas
-            preg_match_all('!\d+!', strip_tags($response), $matches);
-            return str_replace($matches[0][0], number_format($matches[0][0]), $response);
+            return number_format($number);
         case "short":
             // shortening number
-            preg_match_all('!\d+!', strip_tags($response), $matches);
-            $number = shortNumber($matches[0][0]);
+            $number = shortNumber($number);
             if ('for-the-badge' === $style) {
                 $number = strtoupper($number);
             }
-            return str_replace($matches[0][0], $number, $response);
+            return $number;
         case "none"; // fallthrough
+            return $number;
         default:
-            return $response;
+            return $number;
     }
 }
 
