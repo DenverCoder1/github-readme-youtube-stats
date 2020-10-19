@@ -7,9 +7,9 @@ require_once("../functions.php");
 $apiUrl = "https://www.googleapis.com/youtube/v3/channels?";
 $apiUrl .= http_build_query(array(
             "part" => "statistics",
-            "id"   => "UC-lHJZR3Gqxm24_Vd_AJ5Yw",//"UCipSxT7a3rn81vGLw9lqRkg",// your channel id
+            "id"   => "UCipSxT7a3rn81vGLw9lqRkg",// your channel id
             "alt"  => "json",
-            "key"  => "AIzaSyB66QFKg2skV3gGHDnNHJotxmMgKfy5k9E"//"[YOUR API KEY HERE]" // you can put your API key here if you deploy it yourself
+            "key"  => "[YOUR API KEY HERE]" // you can put your API key here if you deploy it yourself
                             ));
 //getting the data from the url as JSON
 $response = curl_get_contents($apiUrl);
@@ -32,8 +32,8 @@ $contents = [
     "logoColor" => "white",
     "style" => "plastic",
     "labelColor" => "gray",
-    "id" => "UC-lHJZR3Gqxm24_Vd_AJ5Yw",//"UCipSxT7a3rn81vGLw9lqRkg",
-    "key" => "AIzaSyB66QFKg2skV3gGHDnNHJotxmMgKfy5k9E"//"[YOUR API KEY HERE]" // you can put your API key here if you deploy it yourself
+    "id" => "UCipSxT7a3rn81vGLw9lqRkg",
+    "key" => "[YOUR API KEY HERE]" // you can put your API key here if you deploy it yourself
 ];
 
 // Build the Shields.io url using the above parameters
