@@ -32,7 +32,7 @@ function getShieldURL($query, $defaults): string
     $color = validateParam("color", "/^([0-9a-fA-F]{3}|[0-9a-fA-F]{6}|[A-Za-z]+)$/", $defaults);
     $logo = validateParam("logo", "/^[A-Za-z0-9\-]+$/", $defaults);
     $logoColor = validateParam("logoColor", "/^([0-9a-fA-F]{3}|[0-9a-fA-F]{6}|[A-Za-z]+)$/", $defaults);
-    $style = validateParam("style", "/^[A-Za-z\-]+$/", $defaults);                                      // added the sytle and format checl here
+    $style = validateParam("style", "/^[A-Za-z\-]+$/", $defaults);                                     
     $format = validateParam("format", "/^(commas|short|none)$/", $defaults);
     $label = validateParam("label", "/^[^#&?<>]+$/", $defaults);
     $labelColor = validateParam("labelColor", "/^([0-9a-fA-F]{3}|[0-9a-fA-F]{6}|[A-Za-z]+)$/", $defaults);
