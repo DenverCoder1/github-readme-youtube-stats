@@ -26,13 +26,14 @@ function validateParam($name, $pattern, $defaults): string
 }
 
 // Use YouTube Data API and Shields.io to get an image URL
-function getShieldURL($query, $defaults): string 
+function getShieldURL($query, $defaults): string
 {
     // Check for and validate parameters
     $color = validateParam("color", "/^([0-9a-fA-F]{3}|[0-9a-fA-F]{6}|[A-Za-z]+)$/", $defaults);
     $logo = validateParam("logo", "/^[A-Za-z0-9\-]+$/", $defaults);
     $logoColor = validateParam("logoColor", "/^([0-9a-fA-F]{3}|[0-9a-fA-F]{6}|[A-Za-z]+)$/", $defaults);
-    $style = validateParam("style", "/^[A-Za-z\-]+$/", $defaults);
+    $style = validateParam("style", "/^[A-Za-z\-]+$/", $defaults);                                      // added the sytle and format checl here
+    $format = validateParam("format", "/^(commas|short|none)$/", $defaults);
     $label = validateParam("label", "/^[^#&?<>]+$/", $defaults);
     $labelColor = validateParam("labelColor", "/^([0-9a-fA-F]{3}|[0-9a-fA-F]{6}|[A-Za-z]+)$/", $defaults);
     $id = validateParam("id", "/^[A-Za-z0-9\-\_]+$/", $defaults);
@@ -53,6 +54,18 @@ function getShieldURL($query, $defaults): string
         "key" => $key
     ));
 
+    //getting the data from the url as JSON
+    $response = curl_get_contents($apiUrl);
+
+    // decoding the json data hence we can extract the Subscribers count
+    $decoded = json_decode($response);
+
+    // getting the subscribers count by querying throught the decoded json
+    $number = $decoded->items[0]->statistics->$query;
+
+    // getting the subscribers count to a rounded value and right format
+    $message = shortNumber($number);
+
     // Shields.io URL parameters
     $params = array(
         "color" => $color,
@@ -61,12 +74,17 @@ function getShieldURL($query, $defaults): string
         "style" => $style,
         "label" => $label,
         "labelColor" => $labelColor,
-        "query" => $query,
-        "url" => $apiUrl
+        "message" => $message
     );
 
     // Build the Shields.io url using the above parameters and JSON query
-    return "https://img.shields.io/badge/dynamic/json?" . http_build_query($params);
+    $final =  "https://img.shields.io/static/v1?" . http_build_query($params);
+
+    // get format param and format the view count accordingly
+    $final = formatResponseNumber($final, $format, $style);
+
+    // returning the final url with all the respective parameters
+    return $final;
 }
 
 // formats response number according to chosen format
