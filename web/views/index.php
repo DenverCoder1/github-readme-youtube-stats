@@ -4,7 +4,7 @@ require_once("../functions.php");
 
 // Default parameters if not specified
 $defaults = [
-    "color" => "blue",
+    "color" => "brightgreen",
     "logo" => "youtube",
     "logoColor" => "white",
     "style" => "flat-square",
