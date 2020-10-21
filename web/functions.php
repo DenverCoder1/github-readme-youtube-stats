@@ -32,12 +32,12 @@ function getShieldURL($query, $defaults): string
     $color = validateParam("color", "/^([0-9a-fA-F]{3}|[0-9a-fA-F]{6}|[A-Za-z]+)$/", $defaults);
     $logo = validateParam("logo", "/^[A-Za-z0-9\-]+$/", $defaults);
     $logoColor = validateParam("logoColor", "/^([0-9a-fA-F]{3}|[0-9a-fA-F]{6}|[A-Za-z]+)$/", $defaults);
-    $style = validateParam("style", "/^[A-Za-z\-]+$/", $defaults);                                     
-    $format = validateParam("format", "/^(commas|short|none)$/", $defaults);
+    $style = validateParam("style", "/^[A-Za-z\-]+$/", $defaults);
     $label = validateParam("label", "/^[^#&?<>]+$/", $defaults);
     $labelColor = validateParam("labelColor", "/^([0-9a-fA-F]{3}|[0-9a-fA-F]{6}|[A-Za-z]+)$/", $defaults);
     $id = validateParam("id", "/^[A-Za-z0-9\-\_]+$/", $defaults);
     $key = validateParam("key", "/^[A-Za-z0-9_]+$/", $defaults);
+    $format = validateParam("format", "/^(commas|short|none)$/", $defaults);
 
     // API key was not specified in URL or defaults
     if (preg_match("/^\[.*\]$/", $key)) {
@@ -46,28 +46,27 @@ function getShieldURL($query, $defaults): string
 
     // URL for accessing the YouTube Data API
     $apiUrl = "https://www.googleapis.com/youtube/v3/channels?";
-    // Add Youtube API parameters
-    $apiUrl .= http_build_query(array(
+    // add YouTube API parameters
+    $apiUrl .= http_build_query([
         "part" => "statistics",
         "id" => $id,
         "alt" => "json",
         "key" => $key
-    ));
+    ]);
 
-    //getting the data from the url as JSON
-    $response = curl_get_contents($apiUrl);
+    // get the JSON data from the YouTube API
+    $response = json_decode(curl_get_contents($apiUrl));
 
-    // decoding the json data hence we can extract the Subscribers count
-    $decoded = json_decode($response);
+    // extract the number from the JSON
+    $number = $response->items[0]->statistics->$query;
 
-    // getting the subscribers count by querying throught the decoded json
-    $number = $decoded->items[0]->statistics->$query;
-
-    // get format param and format the view count accordingly
+    // format the number according to the "format" parameter
     $message = formatResponseNumber($number, $format, $style);
 
-    // Shields.io URL parameters
-    $params = array(
+    // build the static Shields.io url
+    $url =  "https://img.shields.io/static/v1?";
+    // add the parameters
+    $url .= http_build_query([
         "color" => $color,
         "logo" => $logo,
         "logoColor" => $logoColor,
@@ -75,17 +74,15 @@ function getShieldURL($query, $defaults): string
         "label" => $label,
         "labelColor" => $labelColor,
         "message" => $message
-    );
-
-    // Build the Shields.io url using the above parameters and JSON query
-    $final =  "https://img.shields.io/static/v1?" . http_build_query($params);
+    ]);
 
     // returning the final url with all the respective parameters
-    return $final;
+    return $url;
 }
 
-// formats response number according to chosen format
-function formatResponseNumber($number, $format, $style): string {
+// format response number according to chosen format
+function formatResponseNumber($number, $format, $style): string
+{
     switch ($format) {
         case "commas":
             // Adding Commas
@@ -97,14 +94,14 @@ function formatResponseNumber($number, $format, $style): string {
                 $number = strtoupper($number);
             }
             return $number;
-        case "none"; // fallthrough
-            return $number;
         default:
+            // no formatting
             return $number;
     }
 }
 
 // rounds a number to first decimal point and adds appropriate label for amount
+// code adapted from https://stackoverflow.com/a/52490452/11608064
 function shortNumber($num): string
 {
     $units = ['', 'k', 'm', 'b', 't'];

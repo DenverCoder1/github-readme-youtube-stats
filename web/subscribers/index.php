@@ -25,6 +25,4 @@ $url = getShieldURL($query, $defaults);
 header('Content-type: image/svg+xml');
 
 // Get response from the URL and output its contents
-$response = curl_get_contents($url);
-
-echo $response;
+echo curl_get_contents($url);
