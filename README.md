@@ -15,6 +15,10 @@
   </p>
 </p>
 
+## Archived
+
+> This project is now archived since the YouTube API is now [officially supported](https://github.com/badges/shields/pull/6333) by [Shields.io](https://shields.io/category/social)
+
 ## Table of Contents
 
 * [Subscribers badge](#subscribers-badge)
